@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: frontend-deployment
-        image: 567349023925.dkr.ecr.us-west-1.amazonaws.com/dvn-workshop/production/frontend
+        image: 567349023925.dkr.ecr.us-west-1.amazonaws.com/eks-stack/production/frontend
         ports:
         - containerPort: 80

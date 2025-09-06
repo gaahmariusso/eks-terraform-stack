@@ -1,7 +1,7 @@
 variable "tags" {
   type = map(string)
   default = {
-    Project     = "workshop-devops-na-nuvem"
+    Project     = "eks-stack"
     Environment = "production"
   }
 }
@@ -13,7 +13,7 @@ variable "auth" {
   })
 
   default = {
-    assume_role_arn = "arn:aws:iam::567349023925:role/workshop-role"
+    assume_role_arn = "arn:aws:iam::567349023925:role/stack-role"
     region          = "us-west-1"
   }
 }
@@ -35,7 +35,7 @@ variable "eks_cluster" {
   })
 
   default = {
-    name    = "workshop-eks-cluster"
+    name    = "stack-eks-cluster"
     version = "1.31"
     enabled_cluster_log_types = [
       "api",
@@ -45,7 +45,7 @@ variable "eks_cluster" {
       "scheduler",
     ]
     access_config_authentication_mode = "API_AND_CONFIG_MAP"
-    node_group_name                   = "workshop-eks-node-group"
+    node_group_name                   = "stack-eks-node-group"
     node_group_instance_types         = ["t3.medium"]
     node_group_capacity_type          = "ON_DEMAND"
     node_group_scaling_config = {
@@ -64,11 +64,11 @@ variable "ecr_repositories" {
 
   default = [
     {
-      name                 = "dvn-workshop/production/backend"
+      name                 = "eks-stack/production/backend"
       image_tag_mutability = "MUTABLE"
     },
     {
-      name                 = "dvn-workshop/production/frontend"
+      name                 = "eks-stack/production/frontend"
       image_tag_mutability = "MUTABLE"
     }
   ]

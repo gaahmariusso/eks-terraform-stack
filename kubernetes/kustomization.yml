@@ -6,10 +6,10 @@ resources:
   - ingress.yml
 
 images:
-  - name: 567349023925.dkr.ecr.us-west-1.amazonaws.com/dvn-workshop/production/backend
-    newName: 567349023925.dkr.ecr.us-west-1.amazonaws.com/dvn-workshop/production/backend
+  - name: 567349023925.dkr.ecr.us-west-1.amazonaws.com/eks-stack/production/backend
+    newName: 567349023925.dkr.ecr.us-west-1.amazonaws.com/eks-stack/production/backend
     newTag: v1.0
 
-  - name: 567349023925.dkr.ecr.us-west-1.amazonaws.com/dvn-workshop/production/frontend
-    newName: 567349023925.dkr.ecr.us-west-1.amazonaws.com/dvn-workshop/production/frontend
+  - name: 567349023925.dkr.ecr.us-west-1.amazonaws.com/eks-stack/production/frontend
+    newName: 567349023925.dkr.ecr.us-west-1.amazonaws.com/eks-stack/production/frontend
     newTag: v1.0

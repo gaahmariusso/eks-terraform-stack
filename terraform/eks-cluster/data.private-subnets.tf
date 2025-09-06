@@ -1,7 +1,7 @@
 data "aws_subnets" "private" {
   filter {
     name   = "tag:Project"
-    values = ["workshop-devops-na-nuvem"]
+    values = ["eks-stack"]
   }
 
   filter {

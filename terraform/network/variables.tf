@@ -1,7 +1,7 @@
 variable "tags" {
   type = map(string)
   default = {
-    Project     = "workshop-devops-na-nuvem"
+    Project     = "eks-stack"
     Environment = "production"
   }
 }
@@ -13,7 +13,7 @@ variable "auth" {
   })
 
   default = {
-    assume_role_arn = "arn:aws:iam::567349023925:role/workshop-role"
+    assume_role_arn = "arn:aws:iam::567349023925:role/stack-eks-role"
     region          = "us-west-1"
   }
 }
@@ -41,32 +41,32 @@ variable "vpc" {
   })
 
   default = {
-    name                     = "workshop-devops-na-nuvem-vpc"
+    name                     = "eks-stack-vpc"
     cidr_block               = "10.0.0.0/24"
-    internet_gateway_name    = "workshop-devops-na-nuvem-internet-gateway"
-    nat_gateway_name         = "workshop-devops-na-nuvem-nat-gateway"
-    public_route_table_name  = "workshop-devops-na-nuvem-public-route-table"
-    private_route_table_name = "workshop-devops-na-nuvem-private-route-table"
+    internet_gateway_name    = "eks-stack-internet-gateway"
+    nat_gateway_name         = "eks-stack-nat-gateway"
+    public_route_table_name  = "eks-stack-public-route-table"
+    private_route_table_name = "eks-stack-private-route-table"
     public_subnets = [{
-      name                    = "workshop-devops-na-nuvem-vpc-public-subnet-1a"
+      name                    = "eks-stack-vpc-public-subnet-1a"
       cidr_block              = "10.0.0.0/26"
       availability_zone       = "us-west-1a"
       map_public_ip_on_launch = true
       },
       {
-        name                    = "workshop-devops-na-nuvem-vpc-public-subnet-1c"
+        name                    = "eks-stack-vpc-public-subnet-1c"
         cidr_block              = "10.0.0.64/26"
         availability_zone       = "us-west-1c"
         map_public_ip_on_launch = true
     }]
     private_subnets = [{
-      name                    = "workshop-devops-na-nuvem-vpc-private-subnet-1a"
+      name                    = "eks-stack-vpc-private-subnet-1a"
       cidr_block              = "10.0.0.128/26"
       availability_zone       = "us-west-1a"
       map_public_ip_on_launch = false
       },
       {
-        name                    = "workshop-devops-na-nuvem-vpc-private-subnet-1c"
+        name                    = "eks-stack-vpc-private-subnet-1c"
         cidr_block              = "10.0.0.192/26"
         availability_zone       = "us-west-1c"
         map_public_ip_on_launch = false
