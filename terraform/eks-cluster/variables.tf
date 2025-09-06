@@ -13,7 +13,7 @@ variable "auth" {
   })
 
   default = {
-    assume_role_arn = "arn:aws:iam::654654554686:role/workshop-role"
+    assume_role_arn = "arn:aws:iam::567349023925:role/workshop-role"
     region          = "us-west-1"
   }
 }
